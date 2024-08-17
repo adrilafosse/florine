@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "florine:build:production"
+              "buildTarget": "florine:build:production"
             },
             "development": {
-              "browserTarget": "florine:build:development"
+              "buildTarget": "florine:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "florine:build"
+            "buildTarget": "florine:build"
           }
         },
         "test": {
