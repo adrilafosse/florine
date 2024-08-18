@@ -1,12 +1,14 @@
+/*ng build --configuration production
+*/
+/* Styles globaux */
 html, body {
   height: 100%;
+  margin: 0; /* Supprime les marges par défaut */
   font-family: 'Arial', sans-serif;
+  box-sizing: border-box; /* Inclut padding et border dans la largeur totale */
 }
 
-.footer {
-  height : 70px;
-}
-
+/* En-tête et pied de page fixes */
 .header, .footer {
   position: fixed;
   width: 100%;
@@ -15,6 +17,7 @@ html, body {
   color: white;
   text-align: center;
   padding: 10px;
+  z-index: 1000; /* Assure que l'en-tête et le pied de page sont au-dessus des autres éléments */
 }
 
 .header {
@@ -25,30 +28,42 @@ html, body {
   bottom: 0;
 }
 
+/* Ajuste la marge supérieure pour compenser la hauteur de l'en-tête */
+.container-3 {
+  margin-top: 80px; /* Ajuste cette valeur si nécessaire pour le haut de la page */
+  padding: 20px; /* Ajoute du padding pour le contenu */
+  min-height: calc(100vh - 140px); /* Assure que la hauteur minimale est correcte pour le contenu */
+}
+
+/* Titre principal */
 h1 {
   font-size: 40px;
   font-weight: bold;
   text-decoration: underline;
+  margin: 0; /* Supprime les marges par défaut pour éviter le débordement */
 }
 
+/* Conteneur pour le header */
 .container-1 {
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Conteneur pour les boutons */
 .container-2 {
   display: flex;
   align-items: center;
-  gap: 40px;
-  padding-bottom: 10px;
-  padding-left: 50px;
+  gap: 20px; /* Réduit l'espace entre les boutons */
+  padding: 10px 0; /* Réduit le padding */
 }
 
+/* Style des boutons */
 button {
   background: none;
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 16px; /* Ajuste la taille du texte pour les petits écrans */
   text-decoration: underline;
   cursor: pointer;
 }
@@ -56,7 +71,38 @@ button {
 button:hover {
   color: #ccc;
 }
-.container-3{
-  margin-top: 200px;
+
+/* Styles pour les médias */
+@media (max-width: 768px) {
+  .container-2 {
+    flex-direction: column; /* Colonne pour les petits écrans */
+    align-items: center; /* Centre les boutons horizontalement */
+    gap: 10px; /* Réduit l'espace entre les boutons */
+  }
+
+  button {
+    font-size: 14px; /* Réduit la taille du texte des boutons */
+  }
+
+  h1 {
+    font-size: 32px; /* Réduit la taille du titre principal */
+  }
 }
 
+@media (max-width: 480px) {
+  .container-2 {
+    gap: 5px; /* Réduit l'espace entre les boutons pour très petits écrans */
+  }
+
+  button {
+    font-size: 12px; /* Réduit encore la taille du texte des boutons */
+  }
+
+  h1 {
+    font-size: 24px; /* Réduit la taille du titre pour très petits écrans */
+  }
+
+  .container-3 {
+    margin-top: 60px; /* Ajuste la marge supérieure pour compenser le pied de page */
+  }
+}

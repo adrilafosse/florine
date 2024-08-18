@@ -1,63 +1,111 @@
+/* Styles globaux */
 body {
   display: flex; /* Active Flexbox */
   justify-content: center; /* Centre le conteneur horizontalement */
   align-items: center; /* Centre le conteneur verticalement */
   height: 100vh; /* Utilise 100% de la hauteur de la fenêtre */
   margin: 0; /* Supprime les marges par défaut */
+  font-family: Arial, sans-serif; /* Assure une police de base */
 }
+
 h1 {
   font-size: 40px;
   font-weight: bold;
   text-decoration: underline;
   text-align: center;
+  margin: 20px 0;
 }
+
 p {
   padding-top: 20px;
   text-align: center;
-
+  font-size: 18px; /* Assure une taille de police lisible */
 }
-h2{
+
+h2 {
   text-align: center;
+  margin-bottom: 20px; /* Ajoute un espace sous le titre */
 }
-
-.container-2 {
-
-  width: 300px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
-}
-
 
 h3 {
   text-align: left;
-  padding-left: 50px;
+  padding-left: 20px; /* Réduit le padding pour les petits écrans */
   margin: 10px 0;
 }
 
+/* Conteneur principal */
 .container-1 {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column; /* Colonne par défaut pour les petits écrans */
+  align-items: center; /* Centre les éléments horizontalement */
+  justify-content: center;
   width: 90%;
+  max-width: 1200px; /* Largeur maximale pour les grands écrans */
   margin: 50px auto;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
 }
 
+/* Conteneur de texte */
+.container-2 {
+  width: 100%;
+  max-width: 600px; /* Largeur maximale pour le texte */
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Images */
 .image-gauche, .image-droite {
-  width: 600px;
+  width: 100%; /* Les images prennent toute la largeur disponible */
+  max-width: 600px; /* Largeur maximale des images */
   height: auto;
 }
 
+/* Conteneur de texte au centre */
 .text-content {
   text-align: center;
   flex: 1;
-  margin: 0 20px;
+  margin: 20px 0; /* Espacement vertical */
 }
 
+/* Media Queries pour les écrans plus petits */
+@media (max-width: 768px) {
+  .container-1 {
+    flex-direction: column; /* Colonne pour les petits écrans */
+  }
 
+  .image-gauche, .image-droite {
+    width: 80%; /* Réduit la largeur des images sur les petits écrans */
+    max-width: 400px; /* Ajuste la largeur maximale des images */
+  }
 
+  .container-2 {
+    width: 90%; /* Réduit la largeur du conteneur de texte */
+  }
+
+  h1 {
+    font-size: 30px; /* Réduit la taille de la police pour les petits écrans */
+  }
+
+  p {
+    font-size: 16px; /* Réduit la taille de la police du paragraphe */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-gauche, .image-droite {
+    width: 100%; /* Les images prennent toute la largeur sur très petits écrans */
+    max-width: none; /* Enlève la largeur maximale */
+  }
+
+  h1 {
+    font-size: 24px; /* Réduit encore plus la taille de la police pour très petits écrans */
+  }
+
+  p {
+    font-size: 14px; /* Ajuste la taille de la police du paragraphe pour les très petits écrans */
+  }
+}
