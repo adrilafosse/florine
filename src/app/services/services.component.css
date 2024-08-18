@@ -1,0 +1,63 @@
+body {
+  display: flex; /* Active Flexbox */
+  justify-content: center; /* Centre le conteneur horizontalement */
+  align-items: center; /* Centre le conteneur verticalement */
+  height: 100vh; /* Utilise 100% de la hauteur de la fenêtre */
+  margin: 0; /* Supprime les marges par défaut */
+}
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: center;
+}
+p {
+  padding-top: 20px;
+  text-align: center;
+
+}
+h2{
+  text-align: center;
+}
+
+.container-2 {
+
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+h3 {
+  text-align: left;
+  padding-left: 50px;
+  margin: 10px 0;
+}
+
+.container-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.image-gauche, .image-droite {
+  width: 600px;
+  height: auto;
+}
+
+.text-content {
+  text-align: center;
+  flex: 1;
+  margin: 0 20px;
+}
+
+
+

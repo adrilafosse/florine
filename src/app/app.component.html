@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Application Angular</title>
+    <title>Atelier de Florine</title>
 </head>
 <body>
-  <div class="container-1">
-    <img src="../assets/dessin.jpg" alt="Croquis d'un design d'intérieur moderne" class="background-image">
-    <div class="content">
-        <h1>Bienvenue sur l'application de Florine</h1>
-        <h2>Architecte d'intérieur</h2>
-        <h3>Présentation de moi-même :</h3>
-        <p>Je suis motivée, créatrice passionnée par le design d'intérieur. Mon travail ...</p>
-
+  <header class="header">
+    <div class="container-1">
+      <h1>Atelier de Florine</h1>
+      <div class="container-2">
+        <button class="btn-services" (click)="Services()">Services</button>
+        <button class="btn-projects" (click)="Projects()">Projets</button>
+        <button class="btn-contact" (click)="Contact()">Me contacter</button>
+      </div>
     </div>
+  </header>
+
+  <div class="container-3">
+    <app-services *ngIf="currentComponent === 'services'"></app-services>
+    <app-projets *ngIf="currentComponent === 'projects'"></app-projets>
+    <app-me-contacter *ngIf="currentComponent === 'contact'"></app-me-contacter>
   </div>
 
-  <div class="container-2">
-    <img src="../assets/immeuble.jpeg" alt="Vue extérieure d'un bâtiment contemporain">
-    <img src="../assets/ordi.png" alt="Ordinateur portable utilisé pour la conception de projets">
-    <p class="text">Merci</p>
-  </div>
+  <footer class="footer">
+  </footer>
 
 </body>
 </html>

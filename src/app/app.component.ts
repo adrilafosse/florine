@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'florine';
+
+  currentComponent: string = 'services';
+
+  Services() {
+    this.currentComponent = 'services';
+  }
+
+  Projects() {
+    this.currentComponent = 'projects';
+  }
+
+  Contact() {
+    this.currentComponent = 'contact';
+  }
 }
